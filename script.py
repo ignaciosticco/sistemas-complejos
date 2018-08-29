@@ -15,8 +15,9 @@ def ldata(archive):
 data=ldata('yeast_Y2H.txt')
 #print(data)
 
-#G = nx.Graph()
+G = nx.Graph()
 G=nx.read_edgelist('yeast_Y2H.txt')
+
 nodos=G.number_of_nodes()
 edges=G.number_of_edges()
 print(nodos)
@@ -51,7 +52,6 @@ G.add_edges_from([(1, 2), (2, 3), (3, 1)])
 
 
 '''
-
 G = nx.Graph()
 
 G.add_node(1)#agrego un nodo
@@ -64,6 +64,6 @@ G.add_edges_from([(1,2), (1,3)])
 G = nx.Graph()#directed
 
 G.add_edges_from([(1, 2), (2, 3), (3, 1)])
+'''
 nx.draw(G, with_labels=True, font_weight='bold')
 plt.show()
-'''

@@ -20,8 +20,8 @@ G=nx.read_edgelist('yeast_Y2H.txt')
 
 nodos=G.number_of_nodes()
 edges=G.number_of_edges()
-print(nodos)
-print(edges)
+#print(nodos)
+#print(edges)
 
 medio=0.0
 
@@ -33,6 +33,21 @@ medio = medio / nodos
 #densidad = palitos observados / palitos posibles max
 
 densidad = edges / (nodos*(nodos-1))
+
+
+###############
+# calcula maximo
+
+maximo = 0
+i=0
+while i<nodos:
+	if list(G.degree)[i][1]>maximo:
+		maximo = list(G.degree)[i][1]
+	i+=1
+print(maximo)
+
+
+###############
 
 #G.add_node(1)#agrego un nodo
 #for i in data:
@@ -64,6 +79,7 @@ G.add_edges_from([(1,2), (1,3)])
 G = nx.Graph()#directed
 
 G.add_edges_from([(1, 2), (2, 3), (3, 1)])
-'''
+
 nx.draw(G, with_labels=True, font_weight='bold')
 plt.show()
+'''
